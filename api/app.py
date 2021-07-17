@@ -4,4 +4,4 @@ app = flask.Flask(__name__)
 
 @app.route('/message')
 def index():
-    return {'message': "Hello, World"}
+    return {"message": "Hello, World"}
