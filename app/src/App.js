@@ -6,7 +6,7 @@ function App() {
   const [currentMessage, setCurrentMessage] = useState('Hi');
 
   useEffect(() => {
-    fetch('/message').then(res => res.json()).then(data => {
+    fetch('/api/message').then(res => res.json()).then(data => {
       setCurrentMessage(data.message);
     })
   }, []);
