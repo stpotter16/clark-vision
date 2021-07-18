@@ -12,7 +12,7 @@ app = Flask(__name__)
 def index():
     return {"message": "Hello, World"}
 
-@app.route('/api/image/<id>')
+@app.route('/api/image/<image_id>')
 def get_image_by_id(image_id):
     if image_id == SANDBOX_ID:
         image = _make_test_image()
@@ -22,8 +22,8 @@ def get_image_by_id(image_id):
 
 def _make_test_image():
     np.random.seed(42)
-    arr = np.random.rand(300, 300)
-    return np.uint8(arr)
+    arr = np.random.rand(500, 500) * 255
+    return Image.fromarray(np.uint8(arr))
 
 
 def _send_image(image):

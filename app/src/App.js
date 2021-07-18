@@ -4,11 +4,16 @@ import './App.css';
 
 function App() {
   const [currentMessage, setCurrentMessage] = useState('Hi');
+  const [currentImage, setCurrentImage] = useState(null)
 
   useEffect(() => {
     fetch('/api/message').then(res => res.json()).then(data => {
       setCurrentMessage(data.message);
     })
+  }, []);
+
+  useEffect(() => {
+    setCurrentImage('/api/image/sandbox')
   }, []);
 
   return (
@@ -27,6 +32,7 @@ function App() {
           Learn React
         </a>
         <p>The current message is {currentMessage}</p>
+        <img src={currentImage} alt='Image'/>
       </header>
     </div>
   );
