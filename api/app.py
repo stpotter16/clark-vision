@@ -14,7 +14,7 @@ def index():
 
 @app.route('/api/image/<image_id>')
 def get_image_by_id(image_id):
-    if image_id == SANDBOX_ID:
+    if image_id.startswith(SANDBOX_ID):
         image = _make_test_image()
         return _send_image(image)
     return {}
