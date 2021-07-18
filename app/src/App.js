@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import './App.css';
+import NewImageButton from './NewImageButton';
 
 function App() {
   const [currentImage, setCurrentImage] = useState(null);
@@ -9,7 +10,7 @@ function App() {
     setCurrentImage('/api/image/sandbox')
   }, []);
 
-  function handleButtonClick(val) {
+  const handleButtonClick = (val) => {
     setImageID(imageID + 1);
     setCurrentImage(val);
   }
@@ -22,14 +23,6 @@ function App() {
       </header>
     </div>
   );
-}
-
-const NewImageButton = (props) => {
-  const handleButtonClick = () => {
-    let uri = '/api/image/sandbox' + props.imageID
-    props.onButtonClick(uri)
-  }
-  return <button onClick={handleButtonClick}>New Image</button>
 }
 
 export default App;
