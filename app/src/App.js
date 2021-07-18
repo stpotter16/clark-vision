@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import logo from './logo.svg';
 import './App.css';
+import { NewImageButton } from './NewImageButton';
 
 function App() {
   const [currentMessage, setCurrentMessage] = useState('Hi');
@@ -20,7 +20,8 @@ function App() {
     <div className="App">
       <header className="App-header">
         <p>The current message is {currentMessage}</p>
-        <img src={currentImage} alt='Image'/>
+        <img src={currentImage} alt='CT'/>
+        <NewImageButton/>
       </header>
     </div>
   );

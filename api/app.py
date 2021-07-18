@@ -21,9 +21,14 @@ def get_image_by_id(image_id):
 
 
 def _make_test_image():
-    np.random.seed(42)
-    arr = np.random.rand(500, 500) * 255
-    return Image.fromarray(np.uint8(arr))
+    arr = np.zeros((500, 500))
+    height, width = arr.shape
+    size = 20
+    xs = np.random.randint(5, high=height - 5, size=size)
+    ys = np.random.randint(5, high=width - 5, size=size)
+    for x, y in zip(xs, ys):
+        arr[x - 5:x + 5, y - 5:y + 5] = 1.0
+    return Image.fromarray(np.uint8(arr * 255))
 
 
 def _send_image(image):
