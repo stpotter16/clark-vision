@@ -8,4 +8,4 @@ const NewImageButton = (props) => {
   return <button onClick={handleButtonClick}>New Image</button>
 }
 
-export default NewImageButton
+export default NewImageButton;
