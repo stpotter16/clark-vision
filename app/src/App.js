@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import './App.css';
+import Canvas from './Canvas';
 import NewImageButton from './NewImageButton';
 
 function App() {
@@ -20,6 +21,7 @@ function App() {
       <header className="App-header">
         <img src={currentImage} alt='CT'/>
         <NewImageButton imageID={imageID} onButtonClick={handleButtonClick}/>
+        <Canvas/>
       </header>
     </div>
   );
